@@ -19,10 +19,13 @@ En güncel kararlı sürümü **Releases** bölümünden indirebilirsiniz:
 ## Özellikler
 
 - Widget içinde en üst satıra sabitlenmiş **yuvarlak köşeli kompakt kontrol düğmeleri**
+- Geniş menü arka planı yok; düğmeler şeffaf zeminde yalnızca çerçeve ile görünür
+- Fare üzerine gelince yalnızca ilgili düğmenin çerçevesi tema rengine dönüşür
+- Daha net görünüm için vektör Windows simgeleri kullanılır
 - Gün/saat ve okul adı kontrol düğmelerinin altında ayrı satırda gösterilir; çakışma oluşmaz
-- Mini ↔ Tam görünümde yumuşak boyut animasyonu
+- Mini görünüm 310 × 175 ölçüsünde; 'Sonraki ders / Perşembe' gibi bilgiler kırpılmaz
 - Tek tıkla **Mini Görünüm**: yalnızca kontrol düğmeleri, ana durum başlığı ve geri sayım
-- Mini görünümde gün/saat, okul adı, ders saat aralığı, açıklama, sonraki ders, ilerleme çubuğu ve kazanım alanını gizleme
+- Mini görünümde gün/saat, okul adı, ders saat aralığı, açıklama, ayrıntılı sonraki ders satırı, ilerleme çubuğu ve kazanım alanını gizleme
 - Mevcut ders ve zile kalan süre
 - Teneffüs / öğle arası ve sonraki ders bilgisi
 - Ders ve teneffüs ilerleme çubuğu
