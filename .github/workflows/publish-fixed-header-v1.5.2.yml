@@ -1,0 +1,73 @@
+name: Replace DersZil v1.5.2 Fixed Header Release
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/publish-fixed-header-v1.5.2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download final Windows package
+        env:
+          ASSET_URL: "https://sdmntprnortheu.oaiusercontent.com/files/00000000-931c-81f4-85a6-0f287a4ec3ff/raw?se=2026-10-06T12%3A55%3A59Z&sp=r&sv=2026-02-06&sr=b&scid=4140020a-dcae-5f81-80fc-e9edf58748ad&skoid=e5e3659d-4463-4dbf-b2ce-ee32bc0a0a8d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-06T04%3A43%3A33Z&ske=2026-10-07T04%3A43%3A33Z&sks=b&skv=2026-02-06&sig=tHuiCtDHQLjewQDk9wQ/%2BmwDPJYM61aBRkcNzEZMGig%3D"
+        run: |
+          curl -fL "$ASSET_URL" -o DersZilWidget-v1.5.2-win-x64.zip
+          ls -lh DersZilWidget-v1.5.2-win-x64.zip
+
+      - name: Prepare release notes
+        run: |
+          cat > RELEASE_NOTES.md <<'EOF'
+          DersZil Widget v1.5.2
+
+          Bu paket v1.5.2'nin sabit üst kontrol düğmeli son derlemesidir.
+
+          ### Sabit üst kontrol düğmeleri
+          - Dış kontrol şeridi kaldırıldı.
+          - Menü düğmeleri yeniden widget'ın içine alındı ve en üst satıra sabitlendi.
+          - Düğmeler kare yerine yuvarlak köşeli, kompakt bir formda tasarlandı.
+          - Gün/saat ve okul adı düğmelerin altındaki ayrı satırdan başlar; böylece metinlerle çakışma oluşmaz.
+          - Menü konumu seçeneği kaldırıldı; arayüz tüm kullanıcılarda aynı yerleşimi kullanır.
+
+          ### Gerçek Mini Görünüm
+          - Mini görünümde üst kontrol düğmeleri, ana durum başlığı ve geri sayım kalır.
+          - Gün/saat, okul adı, ders saat aralığı, açıklama, sonraki ders, ilerleme çubuğu ve kazanım alanı gizlenir.
+          - Mini içerik yaklaşık **300 × 150** boyutundadır.
+          - Mini ↔ Tam görünüm geçişi yumuşak boyut animasyonuyla yapılır.
+
+          ### Diğer
+          - Koyu, Açık ve Gökkuşağı temaları yuvarlak üst kontrol düğmelerine uyarlanmıştır.
+          - Sistem tepsisinde DersZil'e özel zil temalı simge kullanılır.
+          - Yeni EXE çalıştırıldığında aynı Windows oturumundaki eski DersZil örneği otomatik kapatılır.
+
+          ### Sistem
+          - Windows 10 x64
+          - Windows 11 x64
+          - Ek .NET kurulumu gerekmez.
+
+          Hazırlayan: Hasan ERSÜRER
+          Bilişim Teknolojileri ve Yazılım Öğretmeni
+          EOF
+
+      - name: Update existing v1.5.2 release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release edit v1.5.2 \
+            --repo "${{ github.repository }}" \
+            --title "DersZil Widget v1.5.2" \
+            --notes-file RELEASE_NOTES.md
+
+      - name: Replace release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload v1.5.2 DersZilWidget-v1.5.2-win-x64.zip \
+            --repo "${{ github.repository }}" \
+            --clobber
