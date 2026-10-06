@@ -18,8 +18,8 @@ En güncel kararlı sürümü **Releases** bölümünden indirebilirsiniz:
 
 ## Özellikler
 
-- Tek tıkla **Mini Görünüm**: daha küçük, kompakt ders ve geri sayım ekranı
-- Mini görünümde kazanım alanını otomatik gizleme
+- Tek tıkla **Mini Görünüm**: yalnızca kontrol düğmeleri, ana durum başlığı ve geri sayım
+- Mini görünümde gün/saat, okul adı, ders saat aralığı, açıklama, sonraki ders, ilerleme çubuğu ve kazanım alanını gizleme
 - Mevcut ders ve zile kalan süre
 - Teneffüs / öğle arası ve sonraki ders bilgisi
 - Ders ve teneffüs ilerleme çubuğu
@@ -33,6 +33,8 @@ En güncel kararlı sürümü **Releases** bölümünden indirebilirsiniz:
 - Serbest pencere boyutlandırma
 - Canlı ayar önizlemesi
 - Windows ile otomatik başlatma
+- DersZil'e özel zil temalı sistem tepsisi ikonu
+- Yeni EXE açıldığında aynı oturumdaki eski DersZil örneğini otomatik kapatma
 - Sistem tepsisi desteği
 - Ayarları ve plan verilerini .dzw dosyasına yedekleme / geri yükleme
 - Uygulama içinden sürüm denetimi
