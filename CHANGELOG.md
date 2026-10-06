@@ -2,10 +2,15 @@
 
 ## v1.5.2
 
-### Güncelleme sistemi testi
-- Uygulama içindeki GitHub Releases güncelleme denetimini gerçek sürüm geçişiyle test etmek için yayımlandı.
-- v1.5.1 kullanan kullanıcıların yeni sürümü algılayıp indirme sayfasına yönlendirilmesi hedefleniyor.
-- İşlevsel olarak v1.5.1 tabanını korur; bu sürümün ana amacı güncelleme kanalını doğrulamaktır.
+### Mini Görünüm
+- Widget'a tek tıkla Mini Görünüme geçiş eklendi.
+- Mini Görünüm yaklaşık 340 × 205 boyutunda daha küçük ve kompakt çalışır.
+- Mini Görünümde okul adı, sonraki ders satırı ve yıllık plan/kazanım alanı gizlenir.
+- Saat, mevcut ders/durum, sınıf veya ders özeti, geri sayım ve ilerleme çubuğu görünmeye devam eder.
+- ↙ simgesi Mini Görünüme, ↗ simgesi Tam Görünüme geçiş yapar.
+- Mini/Tam görünüm tercihi kaydedilir ve uygulama yeniden açıldığında korunur.
+- Sistem tepsisine de "Mini / Tam görünüm" kısayolu eklendi.
+- Tam görünümde mevcut serbest boyutlandırma ve yıllık plan özellikleri aynen korunur.
 
 ## v1.5.1
 
