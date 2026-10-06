@@ -2,15 +2,18 @@
 
 ## v1.5.2
 
-### Mini Görünüm
-- Widget'a tek tıkla Mini Görünüme geçiş eklendi.
-- Mini Görünüm yaklaşık 340 × 205 boyutunda daha küçük ve kompakt çalışır.
-- Mini Görünümde okul adı, sonraki ders satırı ve yıllık plan/kazanım alanı gizlenir.
-- Saat, mevcut ders/durum, sınıf veya ders özeti, geri sayım ve ilerleme çubuğu görünmeye devam eder.
-- ↙ simgesi Mini Görünüme, ↗ simgesi Tam Görünüme geçiş yapar.
-- Mini/Tam görünüm tercihi kaydedilir ve uygulama yeniden açıldığında korunur.
-- Sistem tepsisine de "Mini / Tam görünüm" kısayolu eklendi.
-- Tam görünümde mevcut serbest boyutlandırma ve yıllık plan özellikleri aynen korunur.
+### Gerçek Mini Görünüm
+- Mini görünüm sadeleştirildi; yalnızca kontrol düğmeleri, ana durum başlığı ve geri sayım bilgisi bırakıldı.
+- Mini görünümden gün/saat, okul adı, ders saat aralığı, alt açıklama, sonraki ders satırı, ilerleme çubuğu ve kazanım alanı kaldırıldı.
+- Mini boyut yaklaşık 300 × 150 olacak şekilde küçültüldü.
+
+### Arayüz düzeni
+- Tam görünümde okul adı butonların altına ayrı satıra alındı; uzun okul adlarının butonlarla çakışması önlendi.
+- Sistem tepsisi için klasik bilgi simgesi yerine DersZil'e özel zil temalı simge eklendi.
+
+### Tek örnek çalışma
+- Yeni DersZil EXE çalıştırıldığında aynı Windows oturumunda açık olan eski DersZil örneği otomatik kapatılır.
+- Böylece güncel EXE açıldığında iki widget'ın aynı anda açık kalması engellenir.
 
 ## v1.5.1
 
