@@ -18,8 +18,11 @@ En güncel kararlı sürümü **Releases** bölümünden indirebilirsiniz:
 
 ## Özellikler
 
-- Widget gövdesinin dışına yapışık **piyano tipi kontrol şeridi**
-- Menü tuşlarını **Sağ / Sol / Üst / Alt** kenara taşıma
+- Widget gövdesinin dışına yapışık **modern, yuvarlak köşeli kontrol şeridi**
+- Menü tuşlarını **Üst / Alt / Sağ / Sol** kenara taşıma
+- Üst/Alt konumda widget genişliğiyle hizalanan kontrol şeridi
+- Kompakt ikon düğmeleri; üzerine gelince animasyonla genişleyip menü adını gösterme
+- Mini ↔ Tam görünümde yumuşak boyut animasyonu
 - Tek tıkla **Mini Görünüm**: yalnızca kontrol düğmeleri, ana durum başlığı ve geri sayım
 - Mini görünümde gün/saat, okul adı, ders saat aralığı, açıklama, sonraki ders, ilerleme çubuğu ve kazanım alanını gizleme
 - Mevcut ders ve zile kalan süre
