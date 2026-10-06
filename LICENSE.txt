@@ -1,0 +1,14 @@
+DersZil Widget
+Copyright (c) 2026 Hasan ERSÜRER
+
+Tüm hakları saklıdır.
+
+Bu yazılımın çalıştırılabilir sürümü öğretmenler tarafından eğitim amaçlı ve ücretsiz olarak kullanılabilir ve paylaşılabilir.
+
+Kaynak kodun kopyalanması, değiştirilmesi, yeniden yayımlanması, başka bir ürünün parçası olarak dağıtılması veya ticari amaçla kullanılması için hak sahibinin yazılı izni gereklidir.
+
+Yazılım herhangi bir garanti verilmeden "olduğu gibi" sunulur.
+
+İletişim:
+Hasan ERSÜRER
+ersurer1@gmail.com
