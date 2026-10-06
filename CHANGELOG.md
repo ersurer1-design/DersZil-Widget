@@ -2,23 +2,25 @@
 
 ## v1.5.2
 
-### Sabit üst kontrol düğmeleri
-- Dış kontrol şeridi kaldırıldı.
-- Menü düğmeleri yeniden widget gövdesinin içine alındı ve en üst satıra sabitlendi.
-- Düğmeler kare yerine yuvarlak köşeli, kompakt bir formda tasarlandı.
-- Gün/saat ve okul adı kontrol düğmelerinin altındaki ayrı satırdan başlar; böylece metinler düğmelerin altına girmez.
-- Menü konumu seçeneği kaldırıldı; arayüz tüm kullanıcılarda aynı ve öngörülebilir yerleşimi kullanır.
+### Temiz ve net üst kontrol düğmeleri
+- Düğmeler widget'ın en üst satırında sabit kalır.
+- Geniş menü arka planı tamamen kaldırıldı.
+- Düğme yüzeyleri şeffaf; yalnızca yuvarlak çerçeveleri görünür.
+- Fare bir düğmenin üzerine geldiğinde yalnızca o düğmenin çerçevesi tema rengine dönüşür.
+- Önceki büyüme / metin açılma animasyonları kaldırıldı.
+- Simgeler daha net görünüm için **Segoe MDL2 Assets vektör simgelerine** geçirildi.
+- Piksel hizalama ve ekran odaklı metin çizimi etkinleştirildi.
 
-### Gerçek Mini Görünüm
-- Mini görünümde üst kontrol düğmeleri, ana durum başlığı ve geri sayım bilgisi kalır.
-- Gün/saat, okul adı, ders saat aralığı, alt açıklama, sonraki ders satırı, ilerleme çubuğu ve kazanım alanı gizlenir.
-- Mini içerik yaklaşık 300 × 150 boyutundadır.
-- Mini ↔ Tam görünüm geçişi yumuşak boyut animasyonuyla yapılır.
+### Mini görünüm düzeltmesi
+- Mini görünüm **310 × 175** ölçüsüne çıkarıldı.
+- Geri sayım kartında değer sütunu doğal genişlikte tutulduğu için **Perşembe** gibi uzun değerler sıkışmaz.
+- "Sonraki ders" etiketi gerektiğinde kontrollü biçimde kısalabilir; sağdaki gün adı tam görünür.
+- Mini görünümde gün/saat, okul adı, ders saat aralığı, açıklama, ayrıntılı sonraki ders satırı, ilerleme çubuğu ve kazanım alanı gizli kalır.
 
 ### Diğer
-- Koyu, Açık ve Gökkuşağı temaları yuvarlak üst kontrol düğmelerine uyarlanmıştır.
+- Koyu, Açık ve Gökkuşağı temaları yeni çerçeve-hover davranışına uyarlanmıştır.
 - Sistem tepsisinde DersZil'e özel zil temalı simge kullanılır.
-- Yeni DersZil EXE açıldığında aynı Windows oturumundaki eski DersZil örneği otomatik kapatılır.
+- Yeni EXE açıldığında aynı Windows oturumundaki eski DersZil örneği otomatik kapatılır.
 
 
 ## v1.5.1
