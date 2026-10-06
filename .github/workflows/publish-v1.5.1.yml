@@ -1,0 +1,54 @@
+name: Publish DersZil v1.5.1
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/publish-v1.5.1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Windows package
+        env:
+          ASSET_URL: "https://sdmntprnortheu.oaiusercontent.com/files/00000000-e8fc-81f4-b65e-2cccaa0769af/raw?se=2026-10-06T11%3A19%3A08Z&sp=r&sv=2026-02-06&sr=b&scid=c1132b6f-6b53-559b-9ad4-a7f31cddb27e&skoid=e5e3659d-4463-4dbf-b2ce-ee32bc0a0a8d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-06T04%3A43%3A32Z&ske=2026-10-07T04%3A43%3A32Z&sks=b&skv=2026-02-06&sig=SKAF%2BihtX3NL6mFWH4EmN/mHFHGG0rgBAM0x0ubPv3o%3D"
+        run: |
+          curl -fL "$ASSET_URL" -o DersZilWidget-v1.5.1-win-x64.zip
+          ls -lh DersZilWidget-v1.5.1-win-x64.zip
+
+      - name: Create release if needed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh release view v1.5.1 >/dev/null 2>&1; then
+            gh release create v1.5.1 \
+              --repo "${{ github.repository }}" \
+              --title "DersZil Widget v1.5.1" \
+              --notes "İlk genel dağıtım sürümü.
+
+- Windows 10/11 x64
+- İlk kurulum sihirbazı
+- Nasıl Kullanılır? yardım merkezi
+- DOCX/XLSX yıllık plan desteği
+- Aynı haftadaki tüm kazanımları birlikte gösterme
+- Koyu, Açık ve Gökkuşağı temaları
+- Serbest widget boyutlandırma
+- .dzw yedekleme / geri yükleme
+- GitHub Releases üzerinden güncelleme denetimi
+
+Hazırlayan: Hasan ERSÜRER
+Bilişim Teknolojileri ve Yazılım Öğretmeni"
+          fi
+
+      - name: Upload release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload v1.5.1 DersZilWidget-v1.5.1-win-x64.zip \
+            --repo "${{ github.repository }}" \
+            --clobber
