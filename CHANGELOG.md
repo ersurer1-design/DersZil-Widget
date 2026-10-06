@@ -2,31 +2,23 @@
 
 ## v1.5.2
 
-### Modern dış kontrol şeridi
-- Menü düğmeleri widget gövdesinin dışına alınarak yuvarlak köşeli, gölgeli ve temayla uyumlu ayrı bir kontrol şeridine dönüştürüldü.
-- Varsayılan konum **Üst** olarak değiştirildi.
-- Ayarlar → Genel → Menü tuşları alanından **Üst / Alt / Sağ / Sol** konumu seçilebilir.
-- Üst/Alt konumda kontrol şeridi widget gövdesiyle aynı genişliğe hizalanır.
-- Sağ/Sol konumda kontrol şeridi dikey yerleşir ve gövde içeriğini kapatmaz.
-- Düğmeler normal durumda yalnızca ikon olarak kompakt görünür.
-- Fare ile üzerine gelindiğinde düğme yumuşak animasyonla genişler ve **Gizle / Mini Görünüm / Üstte Tut / Tema / Kazanım / Ayarlar / Kapat** gibi menü adını gösterir.
-- Kontrol şeridi fare üzerine geldiğinde belirginleşir; ayrıldığında yeniden daha sakin bir görünüme döner.
-- Koyu, Açık ve Gökkuşağı temaları için kontrol şeridi ayrı olarak renklendirildi.
-
-### Animasyonlar
-- Mini ↔ Tam görünüm geçişine yumuşak boyut animasyonu eklendi.
-- Menü düğmelerine genişleme, metin belirme ve hafif ölçek animasyonu eklendi.
-- Widget gövdesi ve kontrol şeridine daha yumuşak gölge/derinlik efekti eklendi.
+### Sabit üst kontrol düğmeleri
+- Dış kontrol şeridi kaldırıldı.
+- Menü düğmeleri yeniden widget gövdesinin içine alındı ve en üst satıra sabitlendi.
+- Düğmeler kare yerine yuvarlak köşeli, kompakt bir formda tasarlandı.
+- Gün/saat ve okul adı kontrol düğmelerinin altındaki ayrı satırdan başlar; böylece metinler düğmelerin altına girmez.
+- Menü konumu seçeneği kaldırıldı; arayüz tüm kullanıcılarda aynı ve öngörülebilir yerleşimi kullanır.
 
 ### Gerçek Mini Görünüm
-- Mini görünüm yalnızca ana durum başlığı ve geri sayım bilgisini içerir; kontrol düğmeleri dış şeritte kalır.
-- Gün/saat, okul adı, ders saat aralığı, alt açıklama, sonraki ders satırı, ilerleme çubuğu ve kazanım alanı Mini Görünümde gizlenir.
-- Mini içerik alanı yaklaşık 300 × 150 boyutundadır.
+- Mini görünümde üst kontrol düğmeleri, ana durum başlığı ve geri sayım bilgisi kalır.
+- Gün/saat, okul adı, ders saat aralığı, alt açıklama, sonraki ders satırı, ilerleme çubuğu ve kazanım alanı gizlenir.
+- Mini içerik yaklaşık 300 × 150 boyutundadır.
+- Mini ↔ Tam görünüm geçişi yumuşak boyut animasyonuyla yapılır.
 
-### Dağıtım ve çalışma davranışı
-- Sistem tepsisi için DersZil'e özel zil temalı simge kullanılır.
-- Yeni DersZil EXE açıldığında aynı Windows oturumunda açık olan eski DersZil örneği otomatik kapatılır.
-- Böylece güncelleme sonrası iki widget'ın aynı anda açık kalması engellenir.
+### Diğer
+- Koyu, Açık ve Gökkuşağı temaları yuvarlak üst kontrol düğmelerine uyarlanmıştır.
+- Sistem tepsisinde DersZil'e özel zil temalı simge kullanılır.
+- Yeni DersZil EXE açıldığında aynı Windows oturumundaki eski DersZil örneği otomatik kapatılır.
 
 
 ## v1.5.1
