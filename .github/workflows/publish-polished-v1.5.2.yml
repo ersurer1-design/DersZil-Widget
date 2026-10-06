@@ -1,0 +1,80 @@
+name: Replace DersZil v1.5.2 Polished UI Release
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/publish-polished-v1.5.2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download final Windows package
+        env:
+          ASSET_URL: "https://sdmntprnortheu.oaiusercontent.com/files/00000000-b28c-81f4-b76f-586991853475/raw?se=2026-10-06T12%3A42%3A52Z&sp=r&sv=2026-02-06&sr=b&scid=1c5a8469-4631-54f1-9c17-2ed408d3c7ac&skoid=e5e3659d-4463-4dbf-b2ce-ee32bc0a0a8d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-06T06%3A37%3A32Z&ske=2026-10-07T06%3A37%3A32Z&sks=b&skv=2026-02-06&sig=cLnAj5kZniE8I92Z%2BpXUNoiAn7RKISNnsXamgT2EZsc%3D"
+        run: |
+          curl -fL "$ASSET_URL" -o DersZilWidget-v1.5.2-win-x64.zip
+          ls -lh DersZilWidget-v1.5.2-win-x64.zip
+
+      - name: Prepare release notes
+        run: |
+          cat > RELEASE_NOTES.md <<'EOF'
+          DersZil Widget v1.5.2
+
+          Bu paket v1.5.2'nin görsel olarak yenilenmiş son derlemesidir.
+
+          ### Modern dış kontrol şeridi
+          - Menü düğmeleri widget gövdesinin dışında, yuvarlak köşeli ve temayla uyumlu ayrı bir kontrol şeridinde çalışır.
+          - Varsayılan konum **Üst**tür.
+          - **Ayarlar → Genel → Menü tuşları** bölümünden **Üst / Alt / Sağ / Sol** konumu seçilebilir.
+          - Üst/Alt konumda kontrol şeridi widget gövdesiyle aynı genişliğe hizalanır.
+          - Sağ/Sol konumda kontrol şeridi dikey yerleşir ve içerik alanını kapatmaz.
+          - Düğmeler normalde küçük ikonlar halinde görünür.
+          - Üzerine gelindiğinde yumuşak animasyonla genişleyip menü adını gösterir.
+          - Kontrol şeridi fare üzerine geldiğinde belirginleşir, ayrıldığında tekrar sakinleşir.
+
+          ### Animasyonlar
+          - Mini ↔ Tam görünüm geçişi yumuşak boyut animasyonuyla yapılır.
+          - Menü düğmelerinde genişleme, metin belirme ve hafif ölçek animasyonu bulunur.
+          - Widget ve kontrol şeridine daha yumuşak gölge/derinlik efekti eklendi.
+
+          ### Gerçek Mini Görünüm
+          - Mini içerik yaklaşık **300 × 150** boyutundadır.
+          - Ana durum başlığı ve geri sayım dışında ayrıntılı içerikler gizlenir.
+          - Gün/saat, okul adı, ders saat aralığı, açıklama, sonraki ders, ilerleme çubuğu ve kazanım alanı Mini Görünümde gösterilmez.
+
+          ### Diğer
+          - Koyu, Açık ve Gökkuşağı temaları yeni kontrol şeridine uyarlanmıştır.
+          - Sistem tepsisinde DersZil'e özel zil temalı simge kullanılır.
+          - Yeni EXE çalıştırıldığında aynı Windows oturumundaki eski DersZil örneği otomatik kapatılır.
+
+          ### Sistem
+          - Windows 10 x64
+          - Windows 11 x64
+          - Ek .NET kurulumu gerekmez.
+
+          Hazırlayan: Hasan ERSÜRER
+          Bilişim Teknolojileri ve Yazılım Öğretmeni
+          EOF
+
+      - name: Update existing v1.5.2 release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release edit v1.5.2 \
+            --repo "${{ github.repository }}" \
+            --title "DersZil Widget v1.5.2" \
+            --notes-file RELEASE_NOTES.md
+
+      - name: Replace release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload v1.5.2 DersZilWidget-v1.5.2-win-x64.zip \
+            --repo "${{ github.repository }}" \
+            --clobber
