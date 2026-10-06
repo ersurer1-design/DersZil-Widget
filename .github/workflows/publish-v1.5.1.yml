@@ -21,28 +21,33 @@ jobs:
           curl -fL "$ASSET_URL" -o DersZilWidget-v1.5.1-win-x64.zip
           ls -lh DersZilWidget-v1.5.1-win-x64.zip
 
+      - name: Prepare release notes
+        run: |
+          printf '%s\n' \
+            'İlk genel dağıtım sürümü.' \
+            '' \
+            '- Windows 10/11 x64' \
+            '- İlk kurulum sihirbazı' \
+            '- Nasıl Kullanılır? yardım merkezi' \
+            '- DOCX/XLSX yıllık plan desteği' \
+            '- Aynı haftadaki tüm kazanımları birlikte gösterme' \
+            '- Koyu, Açık ve Gökkuşağı temaları' \
+            '- Serbest widget boyutlandırma' \
+            '- .dzw yedekleme / geri yükleme' \
+            '- GitHub Releases üzerinden güncelleme denetimi' \
+            '' \
+            'Hazırlayan: Hasan ERSÜRER' \
+            'Bilişim Teknolojileri ve Yazılım Öğretmeni' > RELEASE_NOTES.md
+
       - name: Create release if needed
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if ! gh release view v1.5.1 >/dev/null 2>&1; then
+          if ! gh release view v1.5.1 --repo "${{ github.repository }}" >/dev/null 2>&1; then
             gh release create v1.5.1 \
               --repo "${{ github.repository }}" \
               --title "DersZil Widget v1.5.1" \
-              --notes "İlk genel dağıtım sürümü.
-
-- Windows 10/11 x64
-- İlk kurulum sihirbazı
-- Nasıl Kullanılır? yardım merkezi
-- DOCX/XLSX yıllık plan desteği
-- Aynı haftadaki tüm kazanımları birlikte gösterme
-- Koyu, Açık ve Gökkuşağı temaları
-- Serbest widget boyutlandırma
-- .dzw yedekleme / geri yükleme
-- GitHub Releases üzerinden güncelleme denetimi
-
-Hazırlayan: Hasan ERSÜRER
-Bilişim Teknolojileri ve Yazılım Öğretmeni"
+              --notes-file RELEASE_NOTES.md
           fi
 
       - name: Upload release asset
