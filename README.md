@@ -18,6 +18,8 @@ En güncel kararlı sürümü **Releases** bölümünden indirebilirsiniz:
 
 ## Özellikler
 
+- Tek tıkla **Mini Görünüm**: daha küçük, kompakt ders ve geri sayım ekranı
+- Mini görünümde kazanım alanını otomatik gizleme
 - Mevcut ders ve zile kalan süre
 - Teneffüs / öğle arası ve sonraki ders bilgisi
 - Ders ve teneffüs ilerleme çubuğu
