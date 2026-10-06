@@ -2,6 +2,13 @@
 
 ## v1.5.2
 
+### Piyano Tipi Kontrol Şeridi
+- Menü düğmeleri widget gövdesinin içinden çıkarılarak dış kenara yapışık ayrı bir kontrol şeridine taşındı.
+- Ayarlar → Genel → Menü tuşları alanından **Sağ / Sol / Üst / Alt** konumu seçilebilir.
+- Sağ/Sol seçiminde düğmeler dikey, Üst/Alt seçiminde yatay dizilir.
+- Kontrol şeridi içerik alanını kapatmaz ve Mini/Tam görünümde aynı konumu korur.
+- Varsayılan konum **Sağ** olarak ayarlandı.
+
 ### Gerçek Mini Görünüm
 - Mini görünüm sadeleştirildi; yalnızca kontrol düğmeleri, ana durum başlığı ve geri sayım bilgisi bırakıldı.
 - Mini görünümden gün/saat, okul adı, ders saat aralığı, alt açıklama, sonraki ders satırı, ilerleme çubuğu ve kazanım alanı kaldırıldı.
