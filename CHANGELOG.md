@@ -1,5 +1,12 @@
 # Değişiklik Günlüğü
 
+## v1.5.2
+
+### Güncelleme sistemi testi
+- Uygulama içindeki GitHub Releases güncelleme denetimini gerçek sürüm geçişiyle test etmek için yayımlandı.
+- v1.5.1 kullanan kullanıcıların yeni sürümü algılayıp indirme sayfasına yönlendirilmesi hedefleniyor.
+- İşlevsel olarak v1.5.1 tabanını korur; bu sürümün ana amacı güncelleme kanalını doğrulamaktır.
+
 ## v1.5.1
 
 ### Dağıtım ve güncelleme
